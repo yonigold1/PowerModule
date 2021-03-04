@@ -11,8 +11,8 @@
 {
     if ([[prefsDict objectForKey:@"SafemodeConf"] boolValue])
     {
-        UIAlertController* confirmation = [UIAlertController alertControllerWithTitle:@"Safemode?" message:@"Are you sure you want to enter safemode?" preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction* actionOK = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction* _Nonnull action)
+        UIAlertController* confirmation = [UIAlertController alertControllerWithTitle:@"Safemode?" message:@"Are you sure you want to enter Safemode?" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* actionOK = [UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDefault handler:^(UIAlertAction* _Nonnull action)
         {
             [self safemode];
         }];
