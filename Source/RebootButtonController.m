@@ -17,8 +17,8 @@
 {
     if ([[prefsDict objectForKey:@"RebootConf"] boolValue])
     {
-        UIAlertController* confirmation = [UIAlertController alertControllerWithTitle:@"Reboot?" message:@"Are you sure you want to reboot?" preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction* actionOK = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction* _Nonnull action)
+        UIAlertController* confirmation = [UIAlertController alertControllerWithTitle:@"Reboot?" message:@"Are you sure you want to reboot/ldrestart?" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* actionOK = [UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDefault handler:^(UIAlertAction* _Nonnull action)
         {
             [self reboot];
         }];
