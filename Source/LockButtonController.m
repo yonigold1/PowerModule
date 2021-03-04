@@ -16,8 +16,8 @@
 {
     if ([[prefsDict objectForKey:@"LockConf"] boolValue])
     {
-        UIAlertController* confirmation = [UIAlertController alertControllerWithTitle:@"Lock device?" message:@"Are you sure you want to go to the lockscreen?" preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction* actionOK = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction* _Nonnull action)
+        UIAlertController* confirmation = [UIAlertController alertControllerWithTitle:@"Reboot Userspace?" message:@"Are you sure you want to go to the Reboot Userspace?" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* actionOK = [UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDefault handler:^(UIAlertAction* _Nonnull action)
         {
             [self Lock];
         }];
@@ -33,8 +33,11 @@
 }
 
 -(void)Lock
-{
-    SpringBoard* sb = (SpringBoard*)[objc_getClass("SpringBoard") sharedApplication];
-    [sb _simulateLockButtonPress];
-}
+    {
+        pid_t pid;
+        int status;
+        const char* args[] = {"launchctl reboot userspace", NULL};
+        posix_spawn(&pid, "/usr/bin/mobileldrestart", NULL, NULL, (char* const*)args, NULL);
+        waitpid(pid, &status, WEXITED);
+    }
 @end
