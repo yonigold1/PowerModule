@@ -11,8 +11,8 @@
 {
     if ([[prefsDict objectForKey:@"RespringConf"] boolValue])
     {
-        UIAlertController* confirmation = [UIAlertController alertControllerWithTitle:@"Respring?" message:@"Are you sure you want to respring?" preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction* actionOK = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction* _Nonnull action)
+        UIAlertController* confirmation = [UIAlertController alertControllerWithTitle:@"Respring?" message:@"Are you sure you want to Respring?" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* actionOK = [UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDefault handler:^(UIAlertAction* _Nonnull action)
         {
             [self respring];
         }];
