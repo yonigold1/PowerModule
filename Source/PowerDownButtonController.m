@@ -18,7 +18,7 @@
     if ([[prefsDict objectForKey:@"PowerDownConf"] boolValue])
     {
         UIAlertController* confirmation = [UIAlertController alertControllerWithTitle:@"Power down?" message:@"Are you sure you want to power down?" preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction* actionOK = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction* _Nonnull action)
+        UIAlertAction* actionOK = [UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDefault handler:^(UIAlertAction* _Nonnull action)
         {
             [self PowerDown];
         }];
