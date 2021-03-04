@@ -12,8 +12,8 @@
 {
     if ([[prefsDict objectForKey:@"UICacheConf"] boolValue])
     {
-        UIAlertController* confirmation = [UIAlertController alertControllerWithTitle:@"UICache?" message:@"Are you sure you want to run uicache?" preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction* actionOK = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction* _Nonnull action)
+        UIAlertController* confirmation = [UIAlertController alertControllerWithTitle:@"UICache?" message:@"Are you sure you want to run UICache?" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* actionOK = [UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDefault handler:^(UIAlertAction* _Nonnull action)
         {
             [self UICache];
         }];
